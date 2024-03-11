@@ -1,4 +1,4 @@
-  ---
+---
 - name: prompt for user 
   hosts: all
   vars_prompt: 
