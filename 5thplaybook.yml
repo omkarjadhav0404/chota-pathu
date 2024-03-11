@@ -1,0 +1,11 @@
+  ---
+- name: prompt for user 
+  hosts: all
+  vars_prompt: 
+    - name: OMKAR
+      prompt: passward
+  tasks: 
+  - name: My First Prompt 
+    debug: 
+      msg: "{{OMKAR GUNJAL}}"
+...
