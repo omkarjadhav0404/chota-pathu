@@ -1,0 +1,10 @@
+---
+- name: my first playbook
+  hosts: all
+  become: yes
+
+  tasks: 
+  - name: printing 1st msg
+    debug:
+      msg: "my first playbook"
+...
