@@ -1,0 +1,13 @@
+---
+- name: My first condition
+  hosts: all
+  become: yes
+  tasks:
+  - name: installing apache on debian
+    command: apt install apache2 -y
+    when: ansible_os_family == "Redhat"
+
+  - name: installing apache on debian
+    command: apt install apache2 -y
+    when: ansible_os_family == "Debian"
+...
