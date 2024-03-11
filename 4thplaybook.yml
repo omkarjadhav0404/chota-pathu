@@ -1,0 +1,22 @@
+---
+- name: Create User Accounts
+  hosts: all
+  become: yes  
+
+  vars:
+    user_list:
+      - username: omi
+        password: omi123
+
+      - username: prath
+        password: prath123
+      
+  tasks:
+    - name: Create user accounts
+      user:
+        name: "{{ item.username }}"
+        password: "{{ item.password }}" #This is a filter in Ansible that hashes
+                                                                  # the provided password using the SHA-512 algorithm. 
+        state: present
+      loop: "{{ user_list }}"
+...
